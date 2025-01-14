@@ -3,7 +3,6 @@ const config: ModuleFederationConfig = {
   name: 'comms',
   exposes: {
     './Module': './src/remote-entry.ts',
-    './hello': '../../packages/hello/src/index.ts',
   },
 };
 export default config;

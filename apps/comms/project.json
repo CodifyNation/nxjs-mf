@@ -51,7 +51,7 @@
       "options": {
         "buildTarget": "comms:build",
         "hmr": true,
-        "port": 4204
+        "port": 4206
       },
       "configurations": {
         "development": {

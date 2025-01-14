@@ -3,15 +3,17 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { Ui } from '@acme/ui';
 import styles from './app.module.css';
 
-const Venues = React.lazy(() => import('venues/Module'));
 
 const Comms = React.lazy(() => import('comms/Module'));
+
+const Venues = React.lazy(() => import('venues/Module'));
+const Hello = React.lazy(() => import('shell/hello'));
 
 export function App() {
   return (
     <>
       <nav className={styles['nav']}>
-        <h1 className={styles['title']}>Acme Inc.</h1>
+        <h1 className={styles['title']}>Testing MicroFrontends</h1>
         <Link className={styles['link']} to="/">
           Home
         </Link>
@@ -19,6 +21,7 @@ export function App() {
         <Link className={styles['link']} to="/comms">
           Comms test is this working
         </Link>
+        <Hello label="this is rounter"/>
       </nav>
       <React.Suspense fallback={null}>
         <main className={styles['outlet']}>
@@ -33,8 +36,8 @@ export function App() {
                 </>
               }
             />
-            <Route path="/venues" element={<Venues />} />
-            <Route path="/comms" element={<Comms />} />
+            <Route path="/venues" element={<div><Hello label="testing shell venues" /><Venues /></div>} />
+            <Route path="/comms" element={<div><Hello label="testing shell app" /><Comms /></div>} />
           </Routes>
         </main>
       </React.Suspense>

@@ -6,11 +6,6 @@ import baseConfig from './module-federation.config';
 
 const config = {
   ...baseConfig,
-  devServer: {
-    port: 4201, // or your app's dev port
-    hot: true,
-    liveReload: true,
-  }
 };
 
 // Nx plugins for webpack to build config object from Nx options and context.

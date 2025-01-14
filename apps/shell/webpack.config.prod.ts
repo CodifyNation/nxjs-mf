@@ -8,6 +8,7 @@ const prodConfig = {
   ...baseConfig,
   remotes: [
     ['comms', 'comms@http://localhost:3001/remoteEntry.js'],
+    ['venues', 'venues@http://localhost:3002/remoteEntry.js'],
   ],
 };
 
