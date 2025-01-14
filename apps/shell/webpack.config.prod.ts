@@ -7,9 +7,7 @@ import baseConfig from './module-federation.config';
 const prodConfig = {
   ...baseConfig,
   remotes: [
-    /*['about', 'https://jazzy-bublanina-a66402.netlify.app'],
-    ['blog', 'https://celebrated-florentine-da1449.netlify.app'],*/
-    ['store', 'store@http://localhost:3001/remoteEntry.js'],
+    ['comms', 'comms@http://localhost:3001/remoteEntry.js'],
   ],
 };
 
