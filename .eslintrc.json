@@ -1,7 +1,7 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "react"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -23,7 +23,8 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
+      "extends": ["plugin:@nx/typescript", "eslint:recommended",
+        "plugin:react/recommended"],
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
         "no-extra-semi": "off"
@@ -31,7 +32,8 @@
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "extends": ["plugin:@nx/javascript", "eslint:recommended",
+        "plugin:react/recommended"],
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
         "no-extra-semi": "off"

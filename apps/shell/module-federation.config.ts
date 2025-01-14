@@ -3,6 +3,6 @@ import { shared } from '../../module-federation.base.config';
 
 export default {
   name: 'shell',
-  remotes: ['comms'],
+  remotes: ['comms', 'venues'],
   shared,
 };

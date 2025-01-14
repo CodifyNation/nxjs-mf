@@ -3,6 +3,8 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { Ui } from '@acme/ui';
 import styles from './app.module.css';
 
+const Venues = React.lazy(() => import('venues/Module'));
+
 const Comms = React.lazy(() => import('comms/Module'));
 
 export function App() {
@@ -13,7 +15,10 @@ export function App() {
         <Link className={styles['link']} to="/">
           Home
         </Link>
-        <Link className={styles['link']} to="/comms">Comms test is this working</Link>
+        <Link to="/venues">Venues</Link>
+        <Link className={styles['link']} to="/comms">
+          Comms test is this working
+        </Link>
       </nav>
       <React.Suspense fallback={null}>
         <main className={styles['outlet']}>
@@ -28,6 +33,7 @@ export function App() {
                 </>
               }
             />
+            <Route path="/venues" element={<Venues />} />
             <Route path="/comms" element={<Comms />} />
           </Routes>
         </main>

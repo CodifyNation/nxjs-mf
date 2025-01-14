@@ -1,0 +1,92 @@
+{
+  "name": "venues",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/venues/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/venues",
+        "index": "apps/venues/src/index.html",
+        "baseHref": "/",
+        "main": "apps/venues/src/main.ts",
+        "tsConfig": "apps/venues/tsconfig.app.json",
+        "assets": ["apps/venues/src/favicon.ico", "apps/venues/src/assets"],
+        "styles": ["apps/venues/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/venues/webpack.config.ts"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/venues/src/environments/environment.ts",
+              "with": "apps/venues/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/venues/webpack.config.prod.ts"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "venues:build",
+        "hmr": true,
+        "port": 4205
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "venues:build:development"
+        },
+        "production": {
+          "buildTarget": "venues:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "executor": "@nx/react:module-federation-static-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "serveTarget": "venues:serve"
+      },
+      "configurations": {
+        "development": {
+          "serveTarget": "venues:serve:development"
+        },
+        "production": {
+          "serveTarget": "venues:serve:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/venues/jest.config.ts"
+      }
+    }
+  }
+}

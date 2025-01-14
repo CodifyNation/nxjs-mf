@@ -16,11 +16,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@acme/hello": ["packages/hello/src/index.ts"],
+      "@acme/style-guide": ["packages/style-guide/src/index.ts"],
       "@acme/ui": ["packages/ui/src/index.ts"],
       "about/Module": ["apps/about/src/remote-entry.ts"],
       "blog/Module": ["apps/blog/src/remote-entry.ts"],
       "comms/Module": ["apps/comms/src/remote-entry.ts"],
-      "store/Module": ["apps/store/src/remote-entry.ts"]
+      "comms/hello": ["packages/hello/src/index.ts"],
+      "store/Module": ["apps/store/src/remote-entry.ts"],
+      "venues/Module": ["apps/venues/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
