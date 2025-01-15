@@ -19,7 +19,7 @@ const delayedImport = (importPromise: unknown, delay = 2000) =>
   });
 
 // @ts-ignore
-const Hello = lazy(() => delayedImport(import('comms/hello')));
+//const Hello = lazy(() => delayedImport(import('comms/hello')));
 
 export function App() {
   return (
@@ -34,7 +34,7 @@ export function App() {
         <Link className={styles['link']} to="/comms">
           Comms test is this working
         </Link>
-        <Hello label="this is rounter"/>
+       {/* <Hello label="this is rounter"/>*/}
       </nav>
       <Suspense fallback={<p>LOADING some components</p>}>
         <main className={styles['outlet']}>
@@ -49,8 +49,8 @@ export function App() {
                 </>
               }
             />
-            <Route path="/venues" element={<div><Hello label="testing shell venues" /><Venues /></div>} />
-            <Route path="/comms" element={<div><Hello label="testing shell app" /><Comms /></div>} />
+            <Route path="/venues" element={<div><Venues /></div>} />
+            <Route path="/comms" element={<div><Comms /></div>} />
           </Routes>
         </main>
       </Suspense>

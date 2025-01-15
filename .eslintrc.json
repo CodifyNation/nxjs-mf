@@ -27,7 +27,9 @@
         "plugin:react/recommended"],
       "rules": {
         "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
+        "no-extra-semi": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off"
       }
     },
     {
