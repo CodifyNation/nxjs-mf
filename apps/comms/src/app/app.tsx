@@ -16,6 +16,7 @@ export function App() {
 
   return (
     <div>
+      <h1>this is for testing</h1>
         <Hello label="comms module itself"/>
         user is logged in test 999: {test.isLoggedIn}
       <NxWelcome title="comms" />
