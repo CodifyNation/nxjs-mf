@@ -17,7 +17,7 @@ export function App() {
   return (
     <div>
         <Hello label="comms module itself"/>
-        user is logged in: {test.isLoggedIn}
+        user is logged in test: {test.isLoggedIn}
       <NxWelcome title="comms" />
     </div>
   );
