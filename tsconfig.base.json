@@ -17,11 +17,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@acme/core": ["packages/core/src/index.ts"],
       "@acme/hello": ["packages/hello/src/index.ts"],
       "@acme/ui": ["packages/ui/src/index.ts"],
       "comms/Module": ["apps/comms/src/remote-entry.ts"],
-      "comms/hello": ["packages/hello/src/index.ts"],
       "shell/hello": ["packages/hello/src/index.ts"],
+      "comms/hello": ["packages/hello/src/index.ts"],
       "venues/Module": ["apps/venues/src/remote-entry.ts"]
     }
   },

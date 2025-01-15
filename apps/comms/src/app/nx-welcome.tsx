@@ -40,11 +40,6 @@ export function NxWelcome({ title }: { title: string }) {
       border-style: solid;
       border-color: currentColor;
     }
-    h1,
-    h2 {
-      font-size: inherit;
-      font-weight: inherit;
-    }
     a {
       color: inherit;
       text-decoration: inherit;

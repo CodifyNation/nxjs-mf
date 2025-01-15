@@ -4,15 +4,20 @@ import styles from './app.module.scss';
 import NxWelcome from './nx-welcome';
 import * as React from 'react';
 import { Suspense } from 'react';
-const Hello = React.lazy(() => import('shell/hello'));
+import { useAuth } from '@acme/core';
+import Hello from '@acme/hello';
+
 
 export function App() {
 
+  const test = useAuth()
+
+  console.log(test)
+
   return (
     <div>
-      <Suspense fallback={'loading...'}>
         <Hello label="comms module itself"/>
-      </Suspense>
+        user is logged in: {test.isLoggedIn}
       <NxWelcome title="comms" />
     </div>
   );

@@ -1,16 +1,29 @@
-import * as React from 'react';
+import { Suspense, lazy } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Ui } from '@acme/ui';
 import styles from './app.module.css';
+import { AuthProvider } from '@acme/core';
 
 
-const Comms = React.lazy(() => import('comms/Module'));
 
-const Venues = React.lazy(() => import('venues/Module'));
-const Hello = React.lazy(() => import('shell/hello'));
+const Comms = lazy(() => import('comms/Module'));
+
+const Venues = lazy(() => import('venues/Module'));
+
+
+const delayedImport = (importPromise: unknown, delay = 2000) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(importPromise);
+    }, delay);
+  });
+
+// @ts-ignore
+const Hello = lazy(() => delayedImport(import('comms/hello')));
 
 export function App() {
   return (
+    <AuthProvider>
     <>
       <nav className={styles['nav']}>
         <h1 className={styles['title']}>Testing MicroFrontends</h1>
@@ -23,7 +36,7 @@ export function App() {
         </Link>
         <Hello label="this is rounter"/>
       </nav>
-      <React.Suspense fallback={null}>
+      <Suspense fallback={<p>LOADING some components</p>}>
         <main className={styles['outlet']}>
           <Routes>
             <Route
@@ -40,8 +53,9 @@ export function App() {
             <Route path="/comms" element={<div><Hello label="testing shell app" /><Comms /></div>} />
           </Routes>
         </main>
-      </React.Suspense>
+      </Suspense>
     </>
+    </AuthProvider>
   );
 }
 
