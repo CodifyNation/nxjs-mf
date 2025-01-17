@@ -1,0 +1,58 @@
+@mixin header1 {
+  font-size: 34px;
+  font-weight: 100;
+}
+
+@mixin header2 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+@mixin header3 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@mixin header4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+@mixin body1 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+@mixin body2 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@mixin shout {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+@mixin overline {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@mixin tag {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@mixin legal {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+@mixin numbers {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+@mixin gradient {
+  background: linear-gradient(45deg, var(--primary) 0%, var(--varient) 100%);
+}
