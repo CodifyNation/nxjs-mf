@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-192.000000, -866.000000)">
+            <g id="Slide-swipe" transform="translate(178.000000, 866.000000)">
+                <g id="icon/nav/chevron_down" transform="translate(26.000000, 12.000000) rotate(-90.000000) translate(-26.000000, -12.000000) translate(14.000000, 0.000000)">
+                    <g id="icon/nav/back_arrow" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) ">
+                        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M16.3612189,9.26906826 C16.747649,8.89902689 17.3608904,8.91231262 17.7309317,9.29874277 C18.0814972,9.6648345 18.088024,10.2344908 17.7591701,10.6080755 L17.7012572,10.6684556 L12.8574547,15.3068292 C12.5036235,15.6456541 11.9570328,15.6644777 11.581784,15.3633 L11.5174163,15.3068292 L6.67361374,10.6684556 C6.28718359,10.2984143 6.27389786,9.68517293 6.64393923,9.29874277 C6.99450474,8.93265105 7.5633439,8.90145903 7.95082046,9.21382474 L8.01365208,9.26906826 L12.1874355,13.265454 L16.3612189,9.26906826 Z" id="Path-7" fill="#007CC2" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -21,9 +21,12 @@
       "@acme/hello": ["packages/hello/src/index.ts"],
       "@acme/ui": ["packages/ui/src/index.ts"],
       "comms/Module": ["apps/comms/src/remote-entry.ts"],
-      "shell/hello": ["packages/hello/src/index.ts"],
       "comms/hello": ["packages/hello/src/index.ts"],
-      "venues/Module": ["apps/venues/src/remote-entry.ts"]
+      "comms/menuItem": ["apps/comms/src/components/index.tsx"],
+      "shell/hello": ["packages/hello/src/index.ts"],
+      "@HE/style-guide": ["packages/style-guide/src/index.ts"],
+      "venues/Module": ["apps/venues/src/remote-entry.ts"],
+      "venues/menuItem": ["apps/venues/src/components/index.tsx"]
     }
   },
   "exclude": ["node_modules", "tmp"]

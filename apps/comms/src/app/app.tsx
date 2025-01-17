@@ -6,19 +6,20 @@ import * as React from 'react';
 import { Suspense } from 'react';
 import { useAuth } from '@acme/core';
 import Hello from '@acme/hello';
-
+import { Ui } from '@acme/ui';
 
 export function App() {
+  const test = useAuth();
 
-  const test = useAuth()
-
-  console.log(test)
+  console.log(test);
 
   return (
     <div>
-      <h1>this is for testing</h1>
-        <Hello label="comms module itself"/>
-        user is logged in test 999: {test.isLoggedIn}
+      <Ui />
+      <h1>
+        User is Currently: {test.isLoggedIn ? 'Logged IN' : 'logged OUT'}
+      </h1>
+      <Hello label="comms module itself" />
       <NxWelcome title="comms" />
     </div>
   );

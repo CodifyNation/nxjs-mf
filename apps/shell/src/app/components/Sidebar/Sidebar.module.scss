@@ -1,0 +1,32 @@
+.root {
+ min-height: 100vh;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 48px 20px 0;
+  background: #031545;
+}
+.navRoot {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navItem {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: background 200ms;
+  user-select: none;
+}
