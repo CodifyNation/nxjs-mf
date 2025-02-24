@@ -1,25 +1,46 @@
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
 
+interface User {
+  name: string;
+  lastName: string;
+}
+
 interface AuthContextType {
-  isLoggedIn: boolean
-  setLoggedINState: (test: boolean) => void
+  isLoggedIn: boolean;
+  // eslint-disable-next-line no-unused-vars
+  setLoggedINState: (user: User) => void;
+  user?: User;
 }
 
 const AuthContext = createContext<AuthContextType>({
   isLoggedIn: false,
-  setLoggedINState: () => console.log('not Loaded')
+  user: {
+    name: '',
+    lastName: '',
+  },
+  setLoggedINState: () => console.log('not Loaded'),
 });
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
-
-  const [ isLoggedIn, setIsLoggedIN] = useState(false)
-
-
+  const [isLoggedIn, setIsLoggedIN] = useState(false);
+  const [user, setUser] = useState<User>({
+    name: '',
+    lastName: '',
+  });
 
   return (
-    <AuthContext.Provider value={{isLoggedIn: isLoggedIn, setLoggedINState: (test) =>setIsLoggedIN(test)}}>
+    <AuthContext.Provider
+      value={{
+        isLoggedIn: isLoggedIn,
+        setLoggedINState: (user) => {
+          setIsLoggedIN(true);
+          setUser(user);
+        },
+        user: user,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

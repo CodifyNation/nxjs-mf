@@ -1,8 +1,6 @@
+// @ts-ignore
 import { version } from '../../package.json';
 import styles from './ui.module.css';
-
-
-const a = 5;
 
 export function Ui() {
   return (

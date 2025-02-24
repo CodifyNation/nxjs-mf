@@ -1,6 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import { Ui } from '@acme/ui';
+import { Route, Routes } from 'react-router-dom';
 import styles from './app.module.css';
 import { AuthProvider } from '@acme/core';
 import { Sidebar } from './components/Sidebar/Sidebar';
@@ -22,8 +21,7 @@ export function App() {
                 element={
                   <>
                     <h1>Home</h1>
-                    <Ui />
-                    some other things
+                    <span>Hello from the Host app</span>
                   </>
                 }
               />

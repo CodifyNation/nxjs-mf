@@ -13,22 +13,11 @@ export const MenuItem = ({ label }: MenuItemProps) => {
       items={[
         {
           label: 'Comms',
-          //link: <Link to="/comms">Comms</Link>,
+          link: <Link to="/comms">{label}</Link>,
           icon: <PhoneIcon />,
           expanded: false,
-          items: [
-            {
-              label: 'Essential On-Park',
-              link: <Link to="/comms">Comms</Link>,
-              expanded: false,
-            },
-          ],
         },
       ]}
     />
   );
 };
-
-/*export const MenuItem = ({ label }: MenuItemProps) => {
-  return <Link to={`/${label}`}>{label}</Link>;
-};*/
